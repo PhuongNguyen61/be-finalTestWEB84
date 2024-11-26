@@ -21,6 +21,7 @@ const teacherPositionController = {
             if (check) throw new Error('code đã tồn tại!')
             const newTeacherPosition = await TeacherPositionModel.create({
                 ...req.body,
+                isActive: true,
                 isDeleted: false,
                 createdAt: new Date(),
                 updatedAt: new Date(),

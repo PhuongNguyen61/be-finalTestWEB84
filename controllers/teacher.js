@@ -20,11 +20,11 @@ const teacherController = {
             .populate('degrees')
             const listTeacher = teachers.map(teacher => ({
                 code: teacher.code,
-                name: teacher.userId.name,
-                email: teacher.userId.email,
-                phoneNumber: teacher.userId.phoneNumber,
+                name: teacher.userId?.name,
+                email: teacher.userId?.email,
+                phoneNumber: teacher.userId?.phoneNumber,
+                address: teacher.userId?.address,
                 isActive: teacher.isActive,
-                address: teacher.userId.address,
                 positions: teacher.teacherPositionsId.map(position => position.name),
                 degrees: teacher.degrees
             }))
